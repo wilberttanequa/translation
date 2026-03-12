@@ -1,0 +1,139 @@
+:root {
+  --bg: #beca57;
+  --tile: #f6f1f1;
+  --tile-shadow: #ddbfc2;
+  --letter: #6f3728;
+  --blank: #7d7b63;
+  --wheel: #9ba345;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Trebuchet MS", "Arial Rounded MT Bold", sans-serif;
+  color: #fff;
+  min-height: 100vh;
+  background: radial-gradient(circle at 20% 30%, #cad55e 0%, var(--bg) 65%, #a5b143 100%);
+  display: grid;
+  place-items: center;
+}
+
+.game {
+  width: min(92vw, 420px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 72px);
+  grid-auto-rows: 72px;
+  gap: 6px;
+}
+
+.spacer {
+  width: 72px;
+  height: 72px;
+}
+
+.cell {
+  border-radius: 18px;
+  display: grid;
+  place-items: center;
+  font-size: 44px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.filled {
+  background: linear-gradient(#fff, var(--tile));
+  color: var(--letter);
+  border: 2px solid #dbd2d2;
+  box-shadow: 0 6px 0 var(--tile-shadow);
+}
+
+.hidden {
+  background: linear-gradient(#c1bea8, var(--blank));
+  border: 2px solid #9d9a82;
+  box-shadow: 0 6px 0 #6e6b53;
+  color: transparent;
+}
+
+.revealed {
+  background: linear-gradient(#fff, var(--tile));
+  color: var(--letter);
+  border: 2px solid #dbd2d2;
+  box-shadow: 0 6px 0 var(--tile-shadow);
+}
+
+.status {
+  margin: 0;
+  min-height: 1.3em;
+  font-weight: 700;
+  text-shadow: 0 2px 2px #69752b;
+}
+
+.wheel-wrap {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  background: rgba(137, 148, 57, 0.7);
+  position: relative;
+}
+
+.letter,
+.center {
+  position: absolute;
+  width: 56px;
+  height: 56px;
+  border: 0;
+  border-radius: 50%;
+  font-size: 45px;
+  font-weight: 800;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+
+.letter-top { top: 10px; left: calc(50% - 28px); }
+.letter-left { left: 10px; top: calc(50% - 28px); }
+.letter-right { right: 10px; top: calc(50% - 28px); }
+.letter-bottom { bottom: 10px; left: calc(50% - 28px); }
+
+.center {
+  left: calc(50% - 28px);
+  top: calc(50% - 28px);
+  font-size: 36px;
+  color: #d8ddab;
+}
+
+.attempt {
+  margin: 0;
+  position: absolute;
+  top: calc(50% - 90px);
+  left: 50%;
+  transform: translateX(-50%);
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  min-height: 20px;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+}
+
+.actions button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: #f7f2f2;
+  color: #5e3324;
+  font-weight: 700;
+  cursor: pointer;
+}
