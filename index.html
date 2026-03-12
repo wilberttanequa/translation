@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crossword Game</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="game">
+      <section class="board" aria-label="Crossword board">
+        <div class="cell filled">T</div>
+        <div class="spacer"></div>
+        <div class="cell hidden" data-word="BAT" data-index="0"></div>
+
+        <div class="cell filled">A</div>
+        <div class="spacer"></div>
+        <div class="cell hidden" data-word="BAT" data-index="1"></div>
+
+        <div class="cell filled">B</div>
+        <div class="cell filled">O</div>
+        <div class="cell filled">A</div>
+        <div class="cell filled">T</div>
+      </section>
+
+      <p class="status" id="status">Build words from the letters.</p>
+
+      <section class="wheel-wrap" aria-label="Letter wheel">
+        <p id="attempt" class="attempt"></p>
+        <button class="letter letter-top" data-letter="B">B</button>
+        <button class="letter letter-left" data-letter="A">A</button>
+        <button class="letter letter-right" data-letter="O">O</button>
+        <button class="letter letter-bottom" data-letter="T">T</button>
+        <button class="center" id="shuffle" title="Shuffle letters" aria-label="Shuffle letters">⟳</button>
+      </section>
+
+      <div class="actions">
+        <button id="submit">Submit</button>
+        <button id="clear">Clear</button>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
